@@ -2,6 +2,13 @@
 
 All notable changes to JustLoot will be documented in this file.
 
+## [1.9.9] - 2026-03-11
+
+### Added
+- GitHub CI/CD: tag-triggered CurseForge deploy via BigWigs Packager
+- README.md with features, commands, and installation instructions
+- .pkgmeta for BigWigs Packager configuration
+
 ## [1.9.8] - 2025-06-26
 
 ### Changed

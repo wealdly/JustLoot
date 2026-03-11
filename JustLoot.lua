@@ -1,7 +1,7 @@
 -- SPDX-License-Identifier: GPL-3.0-or-later
 -- Copyright (C) 2024-2025 wealdly
 -- Maximum speed auto-loot for WoW Retail 12.0+
-local ADDON_VERSION = "1.9.8"
+local ADDON_VERSION = "1.9.9"
 
 -- Localize frequently called globals for speed
 local GetNumLootItems = GetNumLootItems
