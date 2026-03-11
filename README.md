@@ -1,0 +1,2 @@
+# JustLoot
+Speed up Looting
