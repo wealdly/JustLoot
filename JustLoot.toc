@@ -1,0 +1,10 @@
+## Interface: 120001
+## Title: JustLoot
+## Notes: Speed up Looting
+## Author: wealdly
+## Version: 1.0.0
+## License: GPL-3.0-or-later
+
+## X-Category: Loot
+
+JustLoot.lua
