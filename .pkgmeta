@@ -1,0 +1,14 @@
+package-as: JustLoot
+
+manual-changelog:
+  filename: CHANGELOG.md
+  markup-type: markdown
+
+ignore:
+    - .git
+    - .github
+    - .gitignore
+    - .luarc.json
+    - .pkgmeta
+    - README.md
+    - CHANGELOG.md

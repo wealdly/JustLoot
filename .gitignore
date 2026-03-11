@@ -1,0 +1,8 @@
+# Build artifacts
+dist/
+
+# Development files
+.luarc.json
+.claude/
+.vscode/
+*.code-workspace
