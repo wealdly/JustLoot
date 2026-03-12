@@ -5,6 +5,7 @@ local ADDON_VERSION = "1.9.9"
 
 -- Localize frequently called globals for speed
 local GetNumLootItems = GetNumLootItems
+local GetLootSlotInfo = GetLootSlotInfo
 local LootSlot = LootSlot
 local CloseLoot = CloseLoot
 local IsModifiedClick = IsModifiedClick
@@ -77,7 +78,10 @@ local function TryLootAll()
     local numItems = GetNumLootItems()
     if numItems == 0 then return false end
     for i = numItems, 1, -1 do
-        LootSlot(i)
+        local _, _, _, _, _, locked = GetLootSlotInfo(i)
+        if not locked then
+            LootSlot(i)
+        end
     end
     return true
 end
