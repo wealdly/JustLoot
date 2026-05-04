@@ -1,21 +1,20 @@
 -- SPDX-License-Identifier: GPL-3.0-or-later
 -- Copyright (C) 2024-2025 wealdly
 -- Maximum speed auto-loot for WoW Retail 12.0+
-local ADDON_VERSION = "1.9.9"
+local ADDON_VERSION = "1.9.10"
 
 -- Localize frequently called globals for speed
 local GetNumLootItems = GetNumLootItems
 local GetLootSlotInfo = GetLootSlotInfo
 local LootSlot = LootSlot
 local CloseLoot = CloseLoot
-local IsModifiedClick = IsModifiedClick
 local SetCVar = SetCVar
-local GetCVar = GetCVar
 local MuteSoundFile = MuteSoundFile
 local UnmuteSoundFile = UnmuteSoundFile
 local ConfirmLootSlot = ConfirmLootSlot
 local ConfirmLootRoll = ConfirmLootRoll
 local StaticPopup_Hide = StaticPopup_Hide
+local IsModifiedClick = IsModifiedClick
 
 local JustLoot = CreateFrame("Frame")
 local UIErrorsFrame = UIErrorsFrame
@@ -96,7 +95,11 @@ local function StopLooting(self, showFrame)
     SetSoundsMuted(LOOT_SOUND_FILES, false)
     -- Items remain (stalled) — surface the loot frame for manual handling
     if showFrame and LootFrame then
-        OrigLootShow(LootFrame)
+        if OrigLootShow then
+            OrigLootShow(LootFrame)
+        else
+            LootFrame:Show()
+        end
     end
 end
 
@@ -237,6 +240,17 @@ JustLoot:SetScript("OnEvent", function(self, event, ...)
             -- Instantly abort the loot loop on errors like "Inventory is full"
             StopLooting(self, true)
         end
+    elseif event == "LOOT_SLOT_CLEARED" then
+        -- Server confirmed a slot was taken — reset stall timer immediately
+        if looting then
+            stalledTime = 0
+            local remaining = GetNumLootItems()
+            lastCount = remaining
+            if remaining == 0 then
+                StopLooting(self)
+                CloseLoot()
+            end
+        end
     elseif event == "LOOT_CLOSED" then
         -- Loot window closed externally
         if looting then
@@ -248,6 +262,7 @@ end)
 JustLoot:RegisterEvent("PLAYER_LOGIN")
 JustLoot:RegisterEvent("LOOT_READY")
 JustLoot:RegisterEvent("LOOT_CLOSED")
+JustLoot:RegisterEvent("LOOT_SLOT_CLEARED")
 JustLoot:RegisterEvent("LOOT_BIND_CONFIRM")
 JustLoot:RegisterEvent("CONFIRM_LOOT_ROLL")
 JustLoot:RegisterEvent("UI_ERROR_MESSAGE")

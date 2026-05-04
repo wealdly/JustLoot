@@ -2,6 +2,18 @@
 
 All notable changes to JustLoot will be documented in this file.
 
+## [1.9.10] - 2026-05-04
+
+### Changed
+- TOC interface version updated to 12.0.5 (120005)
+
+### Improved
+- Added `LOOT_SLOT_CLEARED` event handler: resets stall timer on server confirmation and closes loot immediately when last item is taken (eliminates up to 50ms delay on close)
+- `StopLooting` now safely falls back to `LootFrame:Show()` when hook is uninitialized
+
+### Fixed
+- Removed unused `GetCVar` local
+
 ## [1.9.9] - 2026-03-11
 
 ### Added

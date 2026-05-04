@@ -1,8 +1,8 @@
-## Interface: 120000
-## Title: JustLoot |cff00ff00v1.9.9|r
+## Interface: 120005
+## Title: JustLoot |cff00ff00v1.9.10|r
 ## Notes: Maximum speed auto-loot (OnUpdate + autoLootRate=0)
 ## Author: wealdly
-## Version: 1.9.9
+## Version: 1.9.10
 ## License: GPL-3.0-or-later
 ## IconTexture: Interface\ICONS\INV_Misc_Coin_01
 ## SavedVariables: JustLootSettings

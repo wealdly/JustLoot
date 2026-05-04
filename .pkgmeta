@@ -12,3 +12,4 @@ ignore:
     - .pkgmeta
     - README.md
     - CHANGELOG.md
+    - build.ps1
