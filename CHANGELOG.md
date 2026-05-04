@@ -2,7 +2,7 @@
 
 All notable changes to JustLoot will be documented in this file.
 
-## [1.9.10] - 2026-05-04
+## [1.9.11] - 2026-05-04
 
 ### Changed
 - TOC interface version updated to 12.0.5 (120005)
