@@ -2,6 +2,11 @@
 
 All notable changes to JustLoot will be documented in this file.
 
+## [1.9.12] - 2026-05-05
+
+### Fixed
+- Added X-Curse-Project-ID to TOC so BigWigs Packager can upload to CurseForge
+
 ## [1.9.11] - 2026-05-04
 
 ### Changed

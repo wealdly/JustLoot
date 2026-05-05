@@ -1,8 +1,9 @@
 ## Interface: 120005
-## Title: JustLoot |cff00ff00v1.9.11|r
+## Title: JustLoot |cff00ff00v1.9.12|r
 ## Notes: Maximum speed auto-loot (OnUpdate + autoLootRate=0)
 ## Author: wealdly
-## Version: 1.9.11
+## Version: 1.9.12
+## X-Curse-Project-ID: 1469349
 ## License: GPL-3.0-or-later
 ## IconTexture: Interface\ICONS\INV_Misc_Coin_01
 ## SavedVariables: JustLootSettings
